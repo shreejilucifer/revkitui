@@ -1,10 +1,16 @@
 import React from 'react'
-
-import { ExampleComponent } from 'revkitui'
-import 'revkitui/dist/index.css'
+import { Container, RevkitTheme } from 'revkitui'
+import Branding from './branding.svg'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <RevkitTheme>
+      <Container type='full'>
+        <img src={Branding} alt='RevkitUI' width='100%' />
+      </Container>
+      <Container type='fluid'>Hello world</Container>
+    </RevkitTheme>
+  )
 }
 
 export default App
