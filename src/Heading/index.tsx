@@ -14,6 +14,7 @@ interface IHeadingProps {
     | 'bright'
     | 'shade'
     | 'tint'
+  opacity?: number
 }
 
 const calculateFontSize = (size: number): string => {
@@ -35,19 +36,25 @@ const calculateFontSize = (size: number): string => {
   }
 }
 
-const StyledHeading = styled.h1<{ size: number; type: string }>`
+const StyledHeading = styled.h1<{
+  size: number
+  type: string
+  opacity: number
+}>`
   font-size: ${(props) => calculateFontSize(props.size)};
   font-weight: 600;
   color: ${(props) => props.theme.colors[props.type]};
+  opacity: ${(props) => props.opacity};
 `
 
 export const Heading: React.FunctionComponent<IHeadingProps> = ({
   type = 'primary',
   size = 1,
+  opacity = 1,
   children
 }) => {
   return (
-    <StyledHeading type={type} size={size}>
+    <StyledHeading opacity={opacity} type={type} size={size}>
       {children}
     </StyledHeading>
   )

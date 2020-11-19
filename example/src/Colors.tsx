@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { Container, Card, Theme } from 'revkitui'
+import { Container, Card, Theme, Heading } from 'revkitui'
 
 interface IColorsProps {}
 
@@ -15,66 +15,86 @@ const Colors: React.FunctionComponent<IColorsProps> = () => {
   return (
     <Container type='fluid'>
       <ColorsContainer>
-        <Card
-          type='showcase'
-          backgroundColor='accent'
-          showcaseLabel='Accent'
-          showcaseTitle={Theme.colors.accent}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='warning'
-          showcaseLabel='Warning'
-          showcaseTitle={Theme.colors.warning}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='success'
-          showcaseLabel='Success'
-          showcaseTitle={Theme.colors.success}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='error'
-          showcaseLabel='Error'
-          showcaseTitle={Theme.colors.error}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='primary'
-          showcaseLabel='Primary'
-          showcaseTitle={Theme.colors.primary}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='secondary'
-          showcaseLabel='Secondary'
-          showcaseTitle={Theme.colors.secondary}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='muted'
-          showcaseLabel='Muted'
-          showcaseTitle={Theme.colors.muted}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='bright'
-          showcaseLabel='Bright'
-          showcaseTitle={Theme.colors.bright}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='shade'
-          showcaseLabel='Shade'
-          showcaseTitle={Theme.colors.shade}
-        />
-        <Card
-          type='showcase'
-          backgroundColor='tint'
-          showcaseLabel='Tint'
-          showcaseTitle={Theme.colors.tint}
-        />
+        <Card backgroundColor='accent'>
+          <Heading size={6} type='bright' opacity={0.56}>
+            Accent
+          </Heading>
+          <Heading size={4} type='bright'>
+            {Theme.colors.accent}
+          </Heading>
+        </Card>
+        <Card backgroundColor='warning'>
+          <Heading size={6} type='bright' opacity={0.56}>
+            Warning
+          </Heading>
+          <Heading size={4} type='bright'>
+            {Theme.colors.warning}
+          </Heading>
+        </Card>
+        <Card backgroundColor='success'>
+          <Heading size={6} type='bright' opacity={0.56}>
+            Success
+          </Heading>
+          <Heading size={4} type='bright'>
+            {Theme.colors.success}
+          </Heading>
+        </Card>
+        <Card backgroundColor='error'>
+          <Heading size={6} type='bright' opacity={0.56}>
+            Error
+          </Heading>
+          <Heading size={4} type='bright'>
+            {Theme.colors.error}
+          </Heading>
+        </Card>
+        <Card backgroundColor='primary'>
+          <Heading size={6} type='bright' opacity={0.56}>
+            Primary
+          </Heading>
+          <Heading size={4} type='bright'>
+            {Theme.colors.primary}
+          </Heading>
+        </Card>
+        <Card backgroundColor='secondary'>
+          <Heading size={6} type='bright' opacity={0.56}>
+            Secondary
+          </Heading>
+          <Heading size={4} type='bright'>
+            {Theme.colors.secondary}
+          </Heading>
+        </Card>
+        <Card backgroundColor='muted'>
+          <Heading size={6} type='primary' opacity={0.56}>
+            Muted
+          </Heading>
+          <Heading size={4} type='primary'>
+            {Theme.colors.muted}
+          </Heading>
+        </Card>
+        <Card backgroundColor='bright'>
+          <Heading size={6} type='primary' opacity={0.56}>
+            Bright
+          </Heading>
+          <Heading size={4} type='primary'>
+            {Theme.colors.bright}
+          </Heading>
+        </Card>
+        <Card backgroundColor='shade'>
+          <Heading size={6} type='primary' opacity={0.56}>
+            Shade
+          </Heading>
+          <Heading size={4} type='primary'>
+            {Theme.colors.accent}
+          </Heading>
+        </Card>
+        <Card backgroundColor='tint'>
+          <Heading size={6} type='primary' opacity={0.56}>
+            Tint
+          </Heading>
+          <Heading size={4} type='primary'>
+            {Theme.colors.tint}
+          </Heading>
+        </Card>
       </ColorsContainer>
     </Container>
   )

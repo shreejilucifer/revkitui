@@ -1,35 +1,47 @@
 import * as React from 'react'
+import styled from 'styled-components'
 // eslint-disable-next-line no-unused-vars
 import { Colors } from '../ThemeProvider/theme'
-import ShowcaseCard from './Showcase'
 
 interface ICardProps {
-  backgroundColor: keyof Colors
+  backgroundColor: keyof Colors | string
   height?: string
   width?: string
-  type: 'showcase' | 'basic'
-  showcaseLabel?: string
-  showcaseTitle?: string
+  padding?: string
 }
 
+const StyledCard = styled.div<{
+  height: string
+  width: string
+  backgroundColor: string
+  padding: string
+}>`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 40px;
+  padding: ${(props) => props.padding};
+  background-color: ${(props) => props.theme.colors[props.backgroundColor]};
+  box-shadow: 0px 16px 56px #2c273814;
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
+`
+
 export const Card: React.FunctionComponent<ICardProps> = ({
-  type,
   backgroundColor,
   height = '275px',
   width = '275px',
-  showcaseLabel,
-  showcaseTitle
+  padding = '40px',
+  children
 }) => {
-  if (type === 'showcase') {
-    return (
-      <ShowcaseCard
-        backgroundColor={backgroundColor}
-        height={height}
-        width={width}
-        label={showcaseLabel}
-        title={showcaseTitle}
-      />
-    )
-  }
-  return null
+  return (
+    <StyledCard
+      padding={padding}
+      backgroundColor={backgroundColor}
+      height={height}
+      width={width}
+    >
+      {children}
+    </StyledCard>
+  )
 }
