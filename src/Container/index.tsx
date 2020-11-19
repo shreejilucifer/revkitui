@@ -13,7 +13,17 @@ interface IContainerProps {
     | 'inherit'
 }
 
-const StyledContainer = styled.div<IContainerProps>`
+const StyledContainer = styled.div<{
+  type: 'full' | 'fluid'
+  flex?: boolean
+  flexDirection?:
+    | 'row'
+    | 'row-reverse'
+    | 'column'
+    | 'column-reverse'
+    | 'initial'
+    | 'inherit'
+}>`
   margin-left: auto;
   margin-right: auto;
   width: ${(props) => (props.type === 'full' ? '100%' : '80%')};
@@ -25,10 +35,11 @@ const StyledContainer = styled.div<IContainerProps>`
 export const Container: React.FunctionComponent<IContainerProps> = ({
   type,
   flex,
+  flexDirection,
   children
 }) => {
   return (
-    <StyledContainer type={type} flex={flex}>
+    <StyledContainer type={type} flex={flex} flexDirection={flexDirection}>
       {children}
     </StyledContainer>
   )
