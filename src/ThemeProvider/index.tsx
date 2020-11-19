@@ -7,17 +7,14 @@ interface IRevkitThemeProps {
   backgroundColor?: string
 }
 
-export const RevkitTheme: React.FunctionComponent<IRevkitThemeProps> = (
-  props
-) => {
+export const RevkitTheme: React.FunctionComponent<IRevkitThemeProps> = ({
+  backgroundColor = theme.colors.tint,
+  children
+}) => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle
-        backgroundColor={
-          props.backgroundColor ? props.backgroundColor : theme.colors.tint
-        }
-      />
-      {props.children}
+      <GlobalStyle backgroundColor={backgroundColor} />
+      {children}
     </ThemeProvider>
   )
 }

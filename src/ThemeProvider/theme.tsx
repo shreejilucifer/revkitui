@@ -1,9 +1,9 @@
-interface Fonts {
+export type Fonts = {
   regular: string
   semibold: string
 }
 
-interface Colors {
+export type Colors = {
   accent: string
   warning: string
   success: string
@@ -16,10 +16,12 @@ interface Colors {
   tint: string
 }
 
-export const theme: {
+export type Theme = {
   fonts: Fonts
   colors: Colors
-} = {
+}
+
+export const theme: Theme = {
   fonts: {
     regular: 'IBM Plex Sans Regular',
     semibold: 'IBM Plex Sans SemiBold'

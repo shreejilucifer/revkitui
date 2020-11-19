@@ -41,13 +41,14 @@ const StyledHeading = styled.h1<{ size: number; type: string }>`
   color: ${(props) => props.theme.colors[props.type]};
 `
 
-export const Heading: React.FunctionComponent<IHeadingProps> = (props) => {
+export const Heading: React.FunctionComponent<IHeadingProps> = ({
+  type = 'primary',
+  size = 1,
+  children
+}) => {
   return (
-    <StyledHeading
-      type={props.type ? props.type : 'primary'}
-      size={props.size ? props.size : 1}
-    >
-      {props.children}
+    <StyledHeading type={type} size={size}>
+      {children}
     </StyledHeading>
   )
 }
