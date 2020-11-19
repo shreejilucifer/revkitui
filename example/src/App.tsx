@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, RevkitTheme, Legend } from 'revkitui'
 import Branding from './branding.svg'
 import Colors from './Colors'
+import InputControls from './InputControls'
 import Typeface from './Typeface'
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Colors />
       <Legend rank={3} title='Icons' />
       <Legend rank={4} title='Inputs' />
+      <InputControls />
       <Legend rank={5} title='Logos' />
       <Legend rank={6} title='Avatars' />
       <Legend rank={7} title='List and Rating' />

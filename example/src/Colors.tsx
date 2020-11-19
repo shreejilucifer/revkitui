@@ -84,7 +84,7 @@ const Colors: React.FunctionComponent<IColorsProps> = () => {
             Shade
           </Heading>
           <Heading size={4} type='primary'>
-            {Theme.colors.accent}
+            {Theme.colors.shade}
           </Heading>
         </Card>
         <Card backgroundColor='tint'>
