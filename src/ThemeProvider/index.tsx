@@ -18,3 +18,5 @@ export const RevkitTheme: React.FunctionComponent<IRevkitThemeProps> = ({
     </ThemeProvider>
   )
 }
+
+export const Theme = theme
