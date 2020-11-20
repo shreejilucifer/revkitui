@@ -19,7 +19,7 @@ const App = () => {
       <Legend rank={3} title='Icons' />
       <Icons />
 
-      <Legend rank={4} title='Inputs' />
+      <Legend rank={4} title='Inputs Controls' />
       <InputControls />
       <Legend rank={5} title='Logos' />
       <Legend rank={6} title='Avatars' />

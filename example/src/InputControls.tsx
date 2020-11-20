@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Alert, Container, Spinner } from 'revkitui'
+import { Alert, Container, Progress, Spinner } from 'revkitui'
 
 interface IInputControlsProps {}
 
@@ -50,6 +50,10 @@ const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
           console.log('hello')
         }}
       />
+      <Progress type='accent' complete={50} />
+      <Progress type='warning' complete={20} />
+      <Progress type='success' complete={80} />
+      <Progress type='error' complete={30} />
       <Spinner type='primary' />
       <Spinner type='warning' />
       <Spinner type='success' />
