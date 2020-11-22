@@ -1,7 +1,17 @@
 import * as React from 'react'
-import { Alert, Container, Progress, Spinner, Tag } from 'revkitui'
+import { Alert, Container, Progress, Spinner, Tag, Button } from 'revkitui'
+import styled from 'styled-components'
 
 interface IInputControlsProps {}
+
+const StyledButtonContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  & button {
+    margin-right: 20px;
+  }
+`
 
 const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
   return (
@@ -66,6 +76,70 @@ const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
         <Tag text='Label' type='success' />
         <Tag text='Label' type='error' />
       </Container>
+      <StyledButtonContainer>
+        <Button
+          text='Button'
+          variant='bright'
+          size='small'
+          onClick={() => console.log('hello')}
+        />
+
+        <Button
+          text='Button'
+          variant='accent'
+          size='small'
+          onClick={() => console.log('hello')}
+        />
+
+        <Button
+          text='Button'
+          variant='ghost'
+          size='small'
+          onClick={() => console.log('hello')}
+        />
+      </StyledButtonContainer>
+      <StyledButtonContainer>
+        <Button
+          text='Button'
+          variant='bright'
+          size='medium'
+          onClick={() => console.log('hello')}
+        />
+        <Button
+          text='Button'
+          variant='accent'
+          size='medium'
+          onClick={() => console.log('hello')}
+        />
+        <Button
+          text='Button'
+          variant='ghost'
+          size='medium'
+          onClick={() => console.log('hello')}
+        />
+      </StyledButtonContainer>
+      <StyledButtonContainer>
+        <Button
+          text='Button'
+          variant='bright'
+          size='large'
+          onClick={() => console.log('hello')}
+        />
+
+        <Button
+          text='Button'
+          variant='accent'
+          size='large'
+          onClick={() => console.log('hello')}
+        />
+
+        <Button
+          text='Button'
+          variant='ghost'
+          size='large'
+          onClick={() => console.log('hello')}
+        />
+      </StyledButtonContainer>
     </Container>
   )
 }
