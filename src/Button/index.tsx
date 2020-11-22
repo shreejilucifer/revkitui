@@ -29,6 +29,7 @@ const StyledButton = styled.button<{
   background: none;
   border-radius: 4px;
   outline: none;
+  font-weight: 600;
   &:hover {
     cursor: pointer;
   }
@@ -39,7 +40,7 @@ const StyledButton = styled.button<{
       background-color: ${(props) => props.theme.colors.bright};
       color: #7c9cbf;
       box-shadow: 0px 2px 4px #2c273814;
-      border: 1px solid #dbe2ea;
+      border: 2px solid #dbe2ea;
 
       &:hover {
         box-shadow: 0px 12px 24px #2c273814;
@@ -47,7 +48,7 @@ const StyledButton = styled.button<{
 
       &:active {
         box-shadow: 0px 2px 4px #2c273814;
-        border: 1px solid #0880ae;
+        border: 2px solid #0880ae;
       }
 
       &:disabled {
@@ -65,7 +66,7 @@ const StyledButton = styled.button<{
       background-color: ${(props) => props.theme.colors.accent};
       color: #ebf4f8;
       box-shadow: 0px 2px 4px #2c273814;
-      border: 1px solid ${(props) => props.theme.colors.accent};
+      border: 2px solid ${(props) => props.theme.colors.accent};
 
       &:hover {
         box-shadow: 0px 12px 24px #2c273829;
@@ -73,7 +74,7 @@ const StyledButton = styled.button<{
 
       &:active {
         box-shadow: 0px 2px 4px #2c273814;
-        border: 1px solid #2c2738db;
+        border: 2px solid #2c2738db;
       }
 
       &:disabled {

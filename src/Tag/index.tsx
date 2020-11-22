@@ -41,7 +41,7 @@ export const Tag: React.FunctionComponent<ITagProps> = ({
 }) => {
   return (
     <StyledTag type={type}>
-      <Paragraph size={3} type={textColor}>
+      <Paragraph weight='semibold' size={3} type={textColor}>
         {text}
       </Paragraph>
       <CrossIcon color={iconColor} size={1} onClick={onClose} />
