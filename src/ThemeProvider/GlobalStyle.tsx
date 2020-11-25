@@ -18,6 +18,8 @@ export const GlobalStyle = createGlobalStyle<{ backgroundColor: string }>`
 	}
   body {
     background-color: ${(props) => props.backgroundColor};
+  }
+  * {
     font-family: 'IBM Plex Sans',  sans-serif;
   }
 `

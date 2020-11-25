@@ -1,5 +1,13 @@
 import * as React from 'react'
-import { Alert, Container, Progress, Spinner, Tag, Button } from 'revkitui'
+import {
+  Alert,
+  Container,
+  Progress,
+  Spinner,
+  Tag,
+  Button,
+  Input
+} from 'revkitui'
 import styled from 'styled-components'
 
 interface IInputControlsProps {}
@@ -12,7 +20,14 @@ const StyledButtonContainer = styled.div`
     margin-right: 20px;
   }
 `
-
+const StyledInputContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  & > div {
+    margin-right: 20px;
+  }
+`
 const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
   return (
     <Container type='fluid'>
@@ -140,6 +155,49 @@ const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
           onClick={() => console.log('hello')}
         />
       </StyledButtonContainer>
+      <StyledInputContainer>
+        <Input
+          onChange={(e) => {
+            console.log(e.target.value)
+          }}
+          label='Label'
+          errorMessage='Validation Error Message'
+          placeholder='Placeholder'
+        />
+        <Input
+          defaultValue='Value'
+          label='Label'
+          successMessage='Validation success message'
+          placeholder='Placeholder'
+        />
+        <Input
+          label='Label'
+          errorMessage='Validation Error Message'
+          placeholder='Placeholder'
+          disabled
+        />
+      </StyledInputContainer>
+      <StyledInputContainer>
+        <Input
+          label='Label'
+          errorMessage='Validation Error Message'
+          placeholder='Placeholder'
+          icon='search'
+        />
+        <Input
+          label='Label'
+          successMessage='Validation success message'
+          placeholder='Placeholder'
+          icon='tick'
+        />
+        <Input
+          label='Label'
+          errorMessage='Validation Error Message'
+          placeholder='Placeholder'
+          disabled
+          icon='alert'
+        />
+      </StyledInputContainer>
     </Container>
   )
 }
