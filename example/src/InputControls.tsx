@@ -7,7 +7,8 @@ import {
   Tag,
   Button,
   Input,
-  Textarea
+  Textarea,
+  Stepper
 } from 'revkitui'
 import styled from 'styled-components'
 
@@ -216,6 +217,10 @@ const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
           placeholder='Placeholder'
           disabled
         />
+      </StyledInputContainer>
+      <StyledInputContainer>
+        <Stepper onDecrement={(value) => console.log(value)} />
+        <Stepper onDecrement={(value) => console.log(value)} disabled />
       </StyledInputContainer>
     </Container>
   )
