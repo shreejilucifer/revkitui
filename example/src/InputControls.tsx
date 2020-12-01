@@ -6,7 +6,8 @@ import {
   Spinner,
   Tag,
   Button,
-  Input
+  Input,
+  Textarea
 } from 'revkitui'
 import styled from 'styled-components'
 
@@ -196,6 +197,24 @@ const InputControls: React.FunctionComponent<IInputControlsProps> = () => {
           placeholder='Placeholder'
           disabled
           icon='alert'
+        />
+      </StyledInputContainer>
+      <StyledInputContainer>
+        <Textarea
+          label='Label'
+          errorMessage='Validation Error Message'
+          placeholder='Placeholder'
+        />
+        <Textarea
+          label='Label'
+          successMessage='Validation success message'
+          placeholder='Placeholder'
+        />
+        <Textarea
+          label='Label'
+          errorMessage='Validation Error Message'
+          placeholder='Placeholder'
+          disabled
         />
       </StyledInputContainer>
     </Container>
