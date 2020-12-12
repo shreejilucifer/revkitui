@@ -8,6 +8,8 @@ import { Check } from './CheckIcon'
 import { ChevronBottom } from './ChevronBottomIcon'
 import { More } from './MoreIcon'
 import { Lens } from './LensIcon'
+import { Add } from './AddIcon'
+import { Minus } from './MinusIcon'
 
 interface IIconProps {
   color: keyof Colors
@@ -89,6 +91,30 @@ export const LensIcon: React.FunctionComponent<IIconProps> = ({
   return (
     <StyledIcon size={size}>
       <Lens color={theme.colors[color]} onClick={onClick} />
+    </StyledIcon>
+  )
+}
+
+export const AddIcon: React.FunctionComponent<IIconProps> = ({
+  color,
+  size = 1,
+  onClick
+}) => {
+  return (
+    <StyledIcon size={size}>
+      <Add color={theme.colors[color]} onClick={onClick} />
+    </StyledIcon>
+  )
+}
+
+export const MinusIcon: React.FunctionComponent<IIconProps> = ({
+  color,
+  size = 1,
+  onClick
+}) => {
+  return (
+    <StyledIcon size={size}>
+      <Minus color={theme.colors[color]} onClick={onClick} />
     </StyledIcon>
   )
 }

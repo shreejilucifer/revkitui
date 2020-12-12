@@ -5,6 +5,7 @@ import Colors from './Colors'
 import Icons from './Icons'
 import InputControls from './InputControls'
 import Typeface from './Typeface'
+import TypeScale from './TypeScale'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
       <Legend rank={9} title='Tooltip' />
       <Legend rank={10} title='Misc' />
       <Legend rank={11} title='Type Scale' />
+      <TypeScale />
       <Legend rank={12} title='Headers' />
       <Legend rank={13} title='Flaps' />
       <Legend rank={14} title='Modals' />

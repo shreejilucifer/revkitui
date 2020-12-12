@@ -1,5 +1,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
+import { AddIcon, MinusIcon } from '../Icons'
+import { Colors } from '../ThemeProvider/theme'
 
 interface IStepperProps {
   initialValue?: number
@@ -23,13 +25,19 @@ const StyledStepperContainer = styled.div<{ disabled: boolean }>`
       props.disabled ? 'rgba(44, 39, 56, 0.24)' : props.theme.colors.primary};
   }
   & span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
     color: ${(props) =>
       props.disabled ? 'rgba(44, 39, 56, 0.24)' : props.theme.colors.primary};
     user-select: none;
-    padding: 16px 20px 16px 20px;
     font-size: 16px;
     &:hover {
       cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+
       ${(props) =>
         !props.disabled &&
         css`
@@ -55,26 +63,41 @@ export const Stepper: React.FunctionComponent<IStepperProps> = ({
   onIncrement
 }) => {
   const [value, setValue] = React.useState(initialValue)
+  const [colorP, setColorP] = React.useState<keyof Colors>('primary')
+  const [colorM, setColorM] = React.useState<keyof Colors>('primary')
+
   return (
     <StyledStepperContainer disabled={disabled}>
       <span
+        onMouseOver={() => {
+          setColorM('bright')
+        }}
+        onMouseOut={() => {
+          setColorM('primary')
+        }}
         onClick={() => {
           if (disabled) return
           setValue(value - 1)
           if (onDecrement) onDecrement(value)
         }}
       >
-        -
+        <MinusIcon color={disabled ? 'muted' : colorM} size={1} />
       </span>
       <p>{value}</p>
       <span
+        onMouseOver={() => {
+          setColorP('bright')
+        }}
+        onMouseOut={() => {
+          setColorP('primary')
+        }}
         onClick={() => {
           if (disabled) return
           setValue(value + 1)
           if (onIncrement) onIncrement(value)
         }}
       >
-        +
+        <AddIcon color={disabled ? 'muted' : colorP} size={1} />
       </span>
     </StyledStepperContainer>
   )

@@ -7,7 +7,9 @@ import {
   CrossIcon,
   ChevronBottomIcon,
   MoreIcon,
-  LensIcon
+  LensIcon,
+  AddIcon,
+  MinusIcon
 } from 'revkitui'
 import styled from 'styled-components'
 
@@ -29,6 +31,8 @@ const Icons: React.FunctionComponent<IIconsProps> = () => {
             <ChevronBottomIcon color='primary' />
             <MoreIcon color='primary' />
             <LensIcon color='primary' />
+            <AddIcon color='primary' />
+            <MinusIcon color='primary' />
           </Container>
         </Card>
       </StyledIcons>
