@@ -1,5 +1,12 @@
 import React from 'react'
-import { Container, RevkitTheme, Legend } from 'revkitui'
+import {
+  Container,
+  RevkitTheme,
+  Legend,
+  Callout,
+  Button,
+  Paragraph
+} from 'revkitui'
 import Branding from './branding.svg'
 import Colors from './Colors'
 import Icons from './Icons'
@@ -34,6 +41,71 @@ const App = () => {
       <Legend rank={13} title='Flaps' />
       <Legend rank={14} title='Modals' />
       <Legend rank={15} title='Callouts' />
+      <Container type='fluid'>
+        <Callout
+          title='Callout Title'
+          content='Supportive text for the callout goes here like a pro, which informs
+            and helps users decide what they should do next.'
+        >
+          <Container flex flexDirection='row' type='full'>
+            <Button text='Action' variant='accent' mr='20px' />
+            <Button text='Action' variant='ghost' />
+          </Container>
+        </Callout>
+        <Callout
+          backgroundColor='shade'
+          title='Callout Title'
+          content='Supportive text for the callout goes here like a pro, which informs
+            and helps users decide what they should do next.'
+        >
+          <Container flex flexDirection='row' type='full'>
+            <Button text='Action' variant='accent' mr='20px' />
+            <Button text='Action' variant='ghost' />
+          </Container>
+        </Callout>
+        <Callout>
+          <Container
+            flex
+            flexDirection='row'
+            type='full'
+            justifyContent='space-between'
+          >
+            <Container type='full' flex flexDirection='row' alignItems='center'>
+              <Paragraph>Supportive text for the callout.</Paragraph>
+            </Container>
+            <Container
+              type='full'
+              flex
+              flexDirection='row'
+              justifyContent='flex-end'
+            >
+              <Button text='Action' variant='accent' mr='20px' />
+              <Button text='Action' variant='ghost' />
+            </Container>
+          </Container>
+        </Callout>
+        <Callout backgroundColor='shade'>
+          <Container
+            flex
+            flexDirection='row'
+            type='full'
+            justifyContent='space-between'
+          >
+            <Container type='full' flex flexDirection='row' alignItems='center'>
+              <Paragraph>Supportive text for the callout.</Paragraph>
+            </Container>
+            <Container
+              type='full'
+              flex
+              flexDirection='row'
+              justifyContent='flex-end'
+            >
+              <Button text='Action' variant='accent' mr='20px' />
+              <Button text='Action' variant='ghost' />
+            </Container>
+          </Container>
+        </Callout>
+      </Container>
       <Legend rank={16} title='Charts' />
       <Legend rank={17} title='Cards' />
       <Legend rank={18} title='Forms' />

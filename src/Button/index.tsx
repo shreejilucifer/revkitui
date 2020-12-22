@@ -18,13 +18,16 @@ interface IButtonProps {
   size?: keyof ButtonSizes
   disabled?: boolean
   text: string
+  mr?: string
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const StyledButton = styled.button<{
   variant: string
   size: string
+  mr: string
 }>`
+  margin-right: ${(props) => props.mr};
   text-align: center;
   background: none;
   border-radius: 4px;
@@ -138,11 +141,13 @@ export const Button: React.FunctionComponent<IButtonProps> = ({
   variant = 'bright',
   size = 'small',
   disabled = false,
+  mr = '0px',
   onClick,
   text
 }) => {
   return (
     <StyledButton
+      mr={mr}
       size={size}
       variant={variant}
       onClick={disabled ? undefined : onClick}

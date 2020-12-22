@@ -11,90 +11,42 @@ const ColorsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 `
 
+const COLORS = [
+  'accent',
+  'warning',
+  'success',
+  'error',
+  'primary',
+  'secondary',
+  'muted',
+  'bright',
+  'shade',
+  'tint'
+]
+
+const DIFF = ['muted', 'bright', 'shade', 'tint']
+
 const Colors: React.FunctionComponent<IColorsProps> = () => {
   return (
     <Container type='fluid'>
       <ColorsContainer>
-        <Card backgroundColor='accent'>
-          <Heading size={6} type='bright' opacity={0.56}>
-            Accent
-          </Heading>
-          <Heading size={4} type='bright'>
-            {Theme.colors.accent}
-          </Heading>
-        </Card>
-        <Card backgroundColor='warning'>
-          <Heading size={6} type='bright' opacity={0.56}>
-            Warning
-          </Heading>
-          <Heading size={4} type='bright'>
-            {Theme.colors.warning}
-          </Heading>
-        </Card>
-        <Card backgroundColor='success'>
-          <Heading size={6} type='bright' opacity={0.56}>
-            Success
-          </Heading>
-          <Heading size={4} type='bright'>
-            {Theme.colors.success}
-          </Heading>
-        </Card>
-        <Card backgroundColor='error'>
-          <Heading size={6} type='bright' opacity={0.56}>
-            Error
-          </Heading>
-          <Heading size={4} type='bright'>
-            {Theme.colors.error}
-          </Heading>
-        </Card>
-        <Card backgroundColor='primary'>
-          <Heading size={6} type='bright' opacity={0.56}>
-            Primary
-          </Heading>
-          <Heading size={4} type='bright'>
-            {Theme.colors.primary}
-          </Heading>
-        </Card>
-        <Card backgroundColor='secondary'>
-          <Heading size={6} type='bright' opacity={0.56}>
-            Secondary
-          </Heading>
-          <Heading size={4} type='bright'>
-            {Theme.colors.secondary}
-          </Heading>
-        </Card>
-        <Card backgroundColor='muted'>
-          <Heading size={6} type='primary' opacity={0.56}>
-            Muted
-          </Heading>
-          <Heading size={4} type='primary'>
-            {Theme.colors.muted}
-          </Heading>
-        </Card>
-        <Card backgroundColor='bright'>
-          <Heading size={6} type='primary' opacity={0.56}>
-            Bright
-          </Heading>
-          <Heading size={4} type='primary'>
-            {Theme.colors.bright}
-          </Heading>
-        </Card>
-        <Card backgroundColor='shade'>
-          <Heading size={6} type='primary' opacity={0.56}>
-            Shade
-          </Heading>
-          <Heading size={4} type='primary'>
-            {Theme.colors.shade}
-          </Heading>
-        </Card>
-        <Card backgroundColor='tint'>
-          <Heading size={6} type='primary' opacity={0.56}>
-            Tint
-          </Heading>
-          <Heading size={4} type='primary'>
-            {Theme.colors.tint}
-          </Heading>
-        </Card>
+        {COLORS.map((color, i) => (
+          <Card backgroundColor={color} key={i} justifyContent='flex-end'>
+            <Heading
+              size={6}
+              type={DIFF.includes(color) ? 'primary' : 'bright'}
+              opacity={0.56}
+            >
+              {color.charAt(0).toUpperCase() + color.slice(1)}
+            </Heading>
+            <Heading
+              size={4}
+              type={DIFF.includes(color) ? 'primary' : 'bright'}
+            >
+              {Theme.colors[color]}
+            </Heading>
+          </Card>
+        ))}
       </ColorsContainer>
     </Container>
   )
